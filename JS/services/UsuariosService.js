@@ -548,6 +548,53 @@ const UsuariosService = Object.freeze({
 
     },
 
+    sincronizarSemilla() {
+
+    if (typeof UsuariosData === "undefined") {
+
+        console.warn("UsuariosService: UsuariosData no está definido.");
+
+        return false;
+
+    }
+
+    const usuariosActuales = this.obtenerTodos();
+
+    const usuariosSemilla = this.normalizarLista(
+        JSON.parse(JSON.stringify(UsuariosData))
+    );
+
+    let huboCambios = false;
+
+    usuariosSemilla.forEach((usuarioSemilla) => {
+
+        const existe = usuariosActuales.some((usuarioActual) =>
+            String(usuarioActual.usuario).trim().toLowerCase() ===
+            String(usuarioSemilla.usuario).trim().toLowerCase()
+        );
+
+        if (!existe) {
+
+            usuariosActuales.push(usuarioSemilla);
+
+            huboCambios = true;
+
+        }
+
+    });
+
+    if (huboCambios) {
+
+        this.guardarTodos(usuariosActuales);
+
+        console.log("UsuariosService: Usuarios semilla sincronizados.");
+
+    }
+
+    return true;
+
+},
+
     /**
      * Cierra la sesión actual.
      *
@@ -558,6 +605,7 @@ const UsuariosService = Object.freeze({
         return Storage.remove(StorageKeys.USUARIO_ACTIVO);
 
     }
+    
 
 });
 
