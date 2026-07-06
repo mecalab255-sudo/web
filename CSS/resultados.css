@@ -1,0 +1,309 @@
+/**
+ * ==========================================================
+ * PROYECTO : FORMA TALENTO
+ * VERSIÓN  : 1.1
+ * ARCHIVO  : CSS/resultados.css
+ * ----------------------------------------------------------
+ * Descripción:
+ * Estilos para la página de resultados del sistema.
+ * Define la apariencia de tarjetas de resultados, promedios,
+ * competencias evaluadas, cursos recomendados, acciones de
+ * administrador y mensajes sin información.
+ * ==========================================================
+ */
+
+/* ==========================
+   CARD DE RESULTADO
+========================== */
+
+.card-resultado {
+    background: #ffffff;
+    padding: 25px;
+    border-radius: 15px;
+    margin-bottom: 25px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+}
+
+.card-resultado h3 {
+    color: #08142e;
+    margin-bottom: 10px;
+}
+
+.card-resultado p {
+    color: #4b5563;
+    margin: 8px 0;
+    font-size: 14px;
+}
+
+/* Compatibilidad con nombre anterior */
+
+.resultado-card {
+    background: #ffffff;
+    padding: 25px;
+    border-radius: 15px;
+    margin-bottom: 25px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+}
+
+/* ==========================
+   ENCABEZADO DEL RESULTADO
+========================== */
+
+.resultado-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 15px;
+}
+
+.resultado-header h3 {
+    margin: 0;
+}
+
+/* ==========================
+   PROMEDIO GENERAL
+========================== */
+
+.promedio {
+    display: inline-block;
+    font-weight: bold;
+    padding: 8px 12px;
+    border-radius: 20px;
+    font-size: 13px;
+}
+
+.promedio.bajo {
+    background: #fee2e2;
+    color: #991b1b;
+}
+
+.promedio.medio {
+    background: #fef3c7;
+    color: #92400e;
+}
+
+.promedio.alto {
+    background: #dcfce7;
+    color: #166534;
+}
+
+/* ==========================
+   PROMEDIOS POR COMPETENCIA
+========================== */
+
+.promedios-competencia {
+    margin-top: 15px;
+    padding: 15px;
+    border-radius: 10px;
+    background: #f9fafb;
+    border: 1px solid #e5e7eb;
+}
+
+.promedios-competencia strong {
+    display: block;
+    color: #08142e;
+    margin-bottom: 10px;
+}
+
+.promedios-competencia ul {
+    margin: 0;
+    padding-left: 20px;
+}
+
+.promedios-competencia li {
+    color: #4b5563;
+    margin-bottom: 6px;
+    font-size: 14px;
+}
+
+/* ==========================
+   CURSOS RECOMENDADOS
+========================== */
+
+.cursos-recomendados {
+    margin-top: 15px;
+    padding: 15px;
+    border-radius: 10px;
+    background: #eef2ff;
+    border: 1px solid #c7d2fe;
+}
+
+.cursos-recomendados strong {
+    display: block;
+    color: #08142e;
+    margin-bottom: 10px;
+}
+
+.cursos-recomendados ul {
+    margin: 0;
+    padding-left: 20px;
+}
+
+.cursos-recomendados li {
+    margin-bottom: 10px;
+    color: #4b5563;
+}
+
+.cursos-recomendados a {
+    color: #4338ca;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.cursos-recomendados a:hover {
+    text-decoration: underline;
+}
+
+.cursos-recomendados small {
+    display: block;
+    color: #6b7280;
+    font-size: 12px;
+    margin-top: 3px;
+}
+
+/* ==========================
+   TABLA DE RESULTADOS
+   Compatibilidad por si se usa después
+========================== */
+
+.tabla-resultados {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.tabla-resultados th {
+    background: #08142e;
+    color: #ffffff;
+    padding: 12px;
+}
+
+.tabla-resultados td {
+    padding: 12px;
+    border-bottom: 1px solid #e5e7eb;
+}
+
+/* ==========================
+   ACCIONES ADMIN
+========================== */
+
+.acciones-admin {
+    display: flex;
+    justify-content: flex-end;
+    margin-bottom: 20px;
+}
+
+#btnLimpiarResultados {
+    background: #991b1b;
+    color: #ffffff;
+    border: none;
+    padding: 12px 20px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: 0.25s;
+}
+
+#btnLimpiarResultados:hover {
+    background: #7f1d1d;
+    transform: translateY(-2px);
+}
+
+/* ==========================
+   BOTÓN ELIMINAR
+========================== */
+
+.btn-eliminar,
+.card-resultado button {
+    background: #ef4444;
+    color: #ffffff;
+    border: none;
+    padding: 9px 14px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: 0.25s;
+    font-weight: bold;
+    margin-top: 15px;
+}
+
+.btn-eliminar:hover,
+.card-resultado button:hover {
+    background: #dc2626;
+    transform: translateY(-2px);
+}
+
+/* ==========================
+   SIN RESULTADOS
+========================== */
+
+.sin-resultados {
+    background: #ffffff;
+    padding: 40px;
+    border-radius: 15px;
+    text-align: center;
+    color: #6b7280;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.06);
+}
+
+.sin-resultados h3 {
+    color: #08142e;
+    margin-bottom: 10px;
+}
+
+.sin-resultados p {
+    color: #6b7280;
+    font-size: 14px;
+}
+
+/* ==========================
+   TOPBAR USUARIO
+========================== */
+
+#usuarioInfo {
+    text-align: right;
+}
+
+#usuarioInfo strong {
+    display: block;
+    color: #333333;
+}
+
+#usuarioInfo span {
+    color: #777777;
+    font-size: 14px;
+}
+
+#usuarioInfo small {
+    display: block;
+    color: #999999;
+    font-size: 12px;
+}
+
+/* ==========================
+   RESPONSIVE
+========================== */
+
+@media (max-width: 768px) {
+
+    .resultado-header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .promedio {
+        width: fit-content;
+    }
+
+    .acciones-admin {
+        justify-content: center;
+    }
+
+    #btnLimpiarResultados {
+        width: 100%;
+    }
+
+    #usuarioInfo {
+        text-align: left;
+    }
+
+}

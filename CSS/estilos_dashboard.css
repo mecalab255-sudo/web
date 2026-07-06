@@ -1,0 +1,355 @@
+/**
+ * ==========================================================
+ * PROYECTO : FORMA TALENTO
+ * VERSIÓN  : 1.1
+ * ARCHIVO  : CSS/estilos_dashboard.css
+ * ----------------------------------------------------------
+ * Descripción:
+ * Estilos generales del layout principal del sistema.
+ * Define la estructura base del dashboard, menú lateral,
+ * barra superior, contenido principal, usuario activo,
+ * tarjetas informativas y comportamiento responsivo.
+ * ==========================================================
+ */
+
+/* ==========================
+   RESET GENERAL
+========================== */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: #f4f6f9;
+    color: #111827;
+}
+
+/* ==========================
+   ESTRUCTURA GENERAL
+========================== */
+
+.dashboard {
+    display: flex;
+    min-height: 100vh;
+}
+
+/* ==========================
+   MENÚ LATERAL
+========================== */
+
+.sidebar {
+    width: 250px;
+    background: #08142e;
+    color: #ffffff;
+    min-height: 100vh;
+    flex-shrink: 0;
+}
+
+.logo {
+    padding: 25px;
+    text-align: center;
+    font-size: 26px;
+    font-weight: bold;
+    background: #111827;
+    letter-spacing: 0.5px;
+}
+
+.menu {
+    list-style: none;
+    margin-top: 20px;
+}
+
+.menu li {
+    transition: 0.3s;
+}
+
+.menu li:hover {
+    background: #00bfff;
+}
+
+.menu li.active {
+    background: #c026ff;
+}
+
+.menu a {
+    display: block;
+    padding: 18px 25px;
+    text-decoration: none;
+    color: #ffffff;
+    font-weight: 500;
+}
+
+/* ==========================
+   CONTENIDO PRINCIPAL
+========================== */
+
+.main-content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+}
+
+/* ==========================
+   BARRA SUPERIOR
+========================== */
+
+.topbar {
+    min-height: 70px;
+    background: #ffffff;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+    padding: 0 30px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.topbar h1,
+.topbar h2 {
+    color: #08142e;
+}
+
+/* ==========================
+   USUARIO ACTIVO
+========================== */
+
+.usuario,
+#usuarioInfo {
+    text-align: right;
+}
+
+.usuario strong,
+#usuarioInfo strong {
+    display: block;
+    color: #333333;
+}
+
+.usuario span,
+#usuarioInfo span {
+    color: #777777;
+    font-size: 14px;
+}
+
+.usuario small,
+#usuarioInfo small {
+    display: block;
+    color: #999999;
+    font-size: 12px;
+    margin-top: 2px;
+}
+
+/* ==========================
+   CONTENIDO CENTRAL
+========================== */
+
+.contenido {
+    padding: 30px;
+    width: 100%;
+}
+
+.contenido h1 {
+    margin-bottom: 20px;
+    color: #08142e;
+}
+
+/* ==========================
+   TARJETAS DASHBOARD
+========================== */
+
+.tarjetas {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 20px;
+}
+
+.tarjeta {
+    background: #ffffff;
+    padding: 25px;
+    border-radius: 12px;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+    transition: 0.25s;
+}
+
+.tarjeta:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 18px rgba(0, 0, 0, 0.12);
+}
+
+.tarjeta h3 {
+    margin-bottom: 10px;
+    color: #08142e;
+    font-size: 17px;
+}
+
+.tarjeta p {
+    font-size: 28px;
+    font-weight: bold;
+    color: #6a11cb;
+}
+
+/* ==========================
+   BOTONES GENERALES
+========================== */
+
+button {
+    font-family: inherit;
+}
+
+button:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+}
+
+/* ==========================
+   ENLACES GENERALES
+========================== */
+
+a {
+    color: inherit;
+}
+
+/* ==========================
+   PERMISOS VISUALES
+========================== */
+
+[data-rol-admin],
+[data-rol-admin-supervisor],
+[data-rol-empleado],
+[data-permiso] {
+    transition: 0.2s;
+}
+
+/* ==========================
+   RESPONSIVE
+========================== */
+
+@media (max-width: 900px) {
+
+    .dashboard {
+        flex-direction: column;
+    }
+
+    .sidebar {
+        width: 100%;
+        min-height: auto;
+    }
+
+    .logo {
+        font-size: 22px;
+        padding: 18px;
+    }
+
+    .menu {
+        display: flex;
+        flex-wrap: wrap;
+        margin-top: 0;
+    }
+
+    .menu li {
+        flex: 1 1 auto;
+    }
+
+    .menu a {
+        padding: 14px 16px;
+        text-align: center;
+        font-size: 14px;
+    }
+
+    .topbar {
+        min-height: auto;
+        padding: 20px;
+        align-items: flex-start;
+    }
+
+    .contenido {
+        padding: 20px;
+    }
+
+}
+
+@media (max-width: 600px) {
+
+    .topbar {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .usuario,
+    #usuarioInfo {
+        text-align: left;
+    }
+
+    .tarjetas {
+        grid-template-columns: 1fr;
+    }
+
+    .menu {
+        flex-direction: column;
+    }
+
+    .menu li {
+        width: 100%;
+    }
+
+    .menu a {
+        text-align: left;
+    }
+
+}
+
+.seccion-cursos {
+    margin-top: 35px;
+}
+
+.seccion-cursos h2 {
+    color: #08142e;
+    margin-bottom: 20px;
+}
+
+.contenedor-cursos-dashboard {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 20px;
+}
+
+.curso-card-dashboard {
+    background: #ffffff;
+    padding: 22px;
+    border-radius: 12px;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.08);
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.curso-card-dashboard h3 {
+    color: #08142e;
+    font-size: 17px;
+}
+
+.curso-card-dashboard p {
+    color: #4b5563;
+    font-size: 14px;
+    line-height: 1.4;
+}
+
+.curso-card-dashboard small {
+    color: #6b7280;
+    font-size: 12px;
+}
+
+.curso-card-dashboard a {
+    margin-top: auto;
+    background: linear-gradient(135deg, #00bfff, #c026ff);
+    color: #ffffff;
+    text-decoration: none;
+    text-align: center;
+    padding: 10px;
+    border-radius: 8px;
+    font-weight: bold;
+}

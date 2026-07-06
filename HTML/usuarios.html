@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>FORMA TALENTO | Usuarios</title>
+
+    <link rel="stylesheet"
+          href="../CSS/estilos_dashboard.css">
+
+    <link rel="stylesheet"
+          href="../CSS/estilos_usuarios.css">
+
+</head>
+
+<body>
+
+    <div class="dashboard">
+
+        <!-- ========================================== -->
+        <!-- MENÚ LATERAL                               -->
+        <!-- ========================================== -->
+
+        <aside class="sidebar">
+
+            <div class="logo">
+                FORMA TALENTO
+            </div>
+
+            <ul class="menu">
+
+                <li>
+
+                    <a href="dashboard.html">
+                        Dashboard
+                    </a>
+
+                </li>
+
+                <li class="active" data-rol-admin>
+
+                    <a href="usuarios.html">
+                        Usuarios
+                    </a>
+
+                </li>
+
+                <li>
+
+                    <a href="cuestionarios.html">
+                        Cuestionarios
+                    </a>
+
+                </li>
+
+                <li data-rol-admin-supervisor>
+
+                    <a href="resultados.html">
+                        Resultados
+                    </a>
+
+                </li>
+
+                <li>
+
+                    <a href="#"
+                       onclick="Auth.cerrarSesion(); return false;">
+                        Cerrar Sesión
+                    </a>
+
+                </li>
+
+            </ul>
+
+        </aside>
+
+        <!-- ========================================== -->
+        <!-- CONTENIDO PRINCIPAL                        -->
+        <!-- ========================================== -->
+
+        <div class="main-content">
+
+            <header class="topbar">
+
+                <h2>
+                    Gestión de Usuarios
+                </h2>
+
+                <div class="usuario"
+                     id="usuarioInfo">
+                </div>
+
+            </header>
+
+            <main class="contenido">
+
+                <!-- ================================== -->
+                <!-- FORMULARIO                         -->
+                <!-- ================================== -->
+
+                <div class="form-box">
+
+                    <h3>
+                        Crear Usuario
+                    </h3>
+
+                    <form id="formUsuario">
+
+                        <input
+                            type="text"
+                            id="nombre"
+                            placeholder="Nombre"
+                            required
+                        >
+
+                        <input
+                            type="text"
+                            id="apellido"
+                            placeholder="Apellido"
+                        >
+
+                        <input
+                            type="text"
+                            id="usuario"
+                            placeholder="Usuario"
+                            required
+                        >
+
+                        <input
+                            type="password"
+                            id="password"
+                            placeholder="Contraseña"
+                            required
+                        >
+
+                        <input
+                            type="email"
+                            id="correo"
+                            placeholder="Correo electrónico"
+                        >
+
+                        <select id="rol" required>
+                        </select>
+
+                        <select id="area" required>
+                        </select>
+
+                        <select id="puesto" required>
+                        </select>
+
+                        <button type="submit">
+                            Crear
+                        </button>
+
+                    </form>
+
+                </div>
+
+                <!-- ================================== -->
+                <!-- TABLA                              -->
+                <!-- ================================== -->
+
+                <div class="tabla-box">
+
+                    <h3>
+                        Lista de Usuarios
+                    </h3>
+
+                    <table border="1" width="100%">
+
+                        <thead>
+
+                            <tr>
+
+                                <th>ID</th>
+
+                                <th>Nombre</th>
+
+                                <th>Usuario</th>
+
+                                <th>Rol</th>
+
+                                <th>Área</th>
+
+                                <th>Puesto</th>
+
+                                <th>Estado</th>
+
+                                <th>Acciones</th>
+
+                            </tr>
+
+                        </thead>
+
+                        <tbody id="tablaUsuarios">
+                        </tbody>
+
+                    </table>
+
+                </div>
+
+            </main>
+
+        </div>
+
+    </div>
+
+    <!-- ===================================================== -->
+    <!-- CONFIGURACIÓN                                         -->
+    <!-- ===================================================== -->
+
+    <script src="../JS/config/storageKeys.js"></script>
+
+    <script src="../JS/config/appConfig.js"></script>
+
+    <!-- ===================================================== -->
+    <!-- UTILIDADES                                            -->
+    <!-- ===================================================== -->
+
+    <script src="../JS/utils/storage.js"></script>
+
+    <script src="../JS/utils/helpers.js"></script>
+
+    <script src="../JS/utils/idGenerator.js"></script>
+
+    <!-- ===================================================== -->
+    <!-- DATOS / CATÁLOGOS V1.1                                -->
+    <!-- ===================================================== -->
+
+    <script src="../JS/data/rolesData.js"></script>
+
+    <script src="../JS/data/areasData.js"></script>
+
+    <script src="../JS/data/puestosData.js"></script>
+
+    <script src="../JS/data/competenciasData.js"></script>
+
+    <script src="../JS/data/categoriasData.js"></script>
+
+    <script src="../JS/data/prioridadesData.js"></script>
+
+    <script src="../JS/data/cursosData.js"></script>
+
+    <script src="../JS/data/usuariosData.js"></script>
+
+    <script src="../JS/data/cuestionariosData.js"></script>
+
+    <script src="../JS/data/preguntasData.js"></script>
+
+    <script src="../JS/data/asignacionesData.js"></script>
+
+    <script src="../JS/data/resultadosData.js"></script>
+
+    <script src="../JS/data/respuestasData.js"></script>
+
+    <!-- ===================================================== -->
+    <!-- SERVICIOS                                             -->
+    <!-- ===================================================== -->
+
+    <script src="../JS/services/BootstrapService.js"></script>
+
+    <script src="../JS/services/UsuariosService.js"></script>
+
+    <!-- ===================================================== -->
+    <!-- AUTENTICACIÓN Y PERMISOS                              -->
+    <!-- ===================================================== -->
+
+    <script src="../JS/auth/auth.js"></script>
+
+    <script src="../JS/auth/permisos.js"></script>
+
+    <!-- ===================================================== -->
+    <!-- PÁGINA                                                -->
+    <!-- ===================================================== -->
+
+    <script src="../JS/pages/usuarios.js"></script>
+
+</body>
+
+</html>
