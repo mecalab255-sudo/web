@@ -20,9 +20,15 @@ document.addEventListener("DOMContentLoaded", () => {
 
     if (typeof BootstrapService !== "undefined") {
 
-        BootstrapService.inicializar();
+    BootstrapService.inicializar();
 
-    }
+}
+
+if (typeof UsuariosService !== "undefined") {
+
+    UsuariosService.sincronizarSemilla();
+
+}
 
     //======================================================
     // Referencias del DOM
