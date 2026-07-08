@@ -1,0 +1,210 @@
+/**
+ * ==========================================================
+ * PROYECTO : FORMA TALENTO
+ * VERSIÓN  : 1.1
+ * ARCHIVO  : CSS/crear_cuestionario.css
+ * ----------------------------------------------------------
+ * Descripción:
+ * Estilos para la página de creación de cuestionarios.
+ * Define la apariencia del formulario, campos generales,
+ * preguntas dinámicas, selectores, botones y diseño
+ * responsivo.
+ * ==========================================================
+ */
+
+/* ==========================
+   CARD PRINCIPAL
+========================== */
+
+.card-cuestionario {
+    background: #ffffff;
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+}
+
+/* ==========================
+   GRUPOS DEL FORMULARIO
+========================== */
+
+.grupo {
+    margin-bottom: 20px;
+}
+
+.grupo label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: bold;
+    color: #08142e;
+}
+
+.grupo input,
+.grupo textarea,
+.grupo select {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #d1d5db;
+    border-radius: 8px;
+    font-size: 16px;
+    background: #ffffff;
+    box-sizing: border-box;
+}
+
+.grupo textarea {
+    min-height: 120px;
+    resize: vertical;
+}
+
+.grupo input:focus,
+.grupo textarea:focus,
+.grupo select:focus {
+    outline: none;
+    border-color: #00bfff;
+    box-shadow: 0 0 0 3px rgba(0, 191, 255, 0.15);
+}
+
+/* ==========================
+   CHECKBOX
+========================== */
+
+.grupo input[type="checkbox"] {
+    width: auto;
+    margin-right: 8px;
+}
+
+.grupo label input[type="checkbox"] {
+    vertical-align: middle;
+}
+
+/* ==========================
+   SEPARADOR
+========================== */
+
+hr {
+    margin: 30px 0;
+    border: none;
+    border-top: 1px solid #e5e7eb;
+}
+
+/* ==========================
+   PREGUNTAS DINÁMICAS
+========================== */
+
+.pregunta {
+    background: #f9fafb;
+    border: 1px solid #e5e7eb;
+    border-radius: 10px;
+    padding: 20px;
+    margin-bottom: 15px;
+}
+
+.pregunta label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 8px;
+    color: #08142e;
+}
+
+.pregunta input,
+.pregunta select {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #d1d5db;
+    border-radius: 8px;
+    box-sizing: border-box;
+    margin-bottom: 12px;
+    background: #ffffff;
+}
+
+.pregunta input:focus,
+.pregunta select:focus {
+    outline: none;
+    border-color: #00bfff;
+    box-shadow: 0 0 0 3px rgba(0, 191, 255, 0.15);
+}
+
+.info-likert {
+    display: block;
+    margin-top: 10px;
+    margin-bottom: 12px;
+    color: #6b7280;
+    font-size: 13px;
+    line-height: 1.4;
+}
+
+/* ==========================
+   BOTÓN ELIMINAR PREGUNTA
+========================== */
+
+.btnEliminarPregunta {
+    background: #ef4444;
+    color: #ffffff;
+    border: none;
+    padding: 10px 14px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: 0.25s;
+}
+
+.btnEliminarPregunta:hover {
+    background: #dc2626;
+    transform: translateY(-2px);
+}
+
+/* ==========================
+   ACCIONES GENERALES
+========================== */
+
+.acciones {
+    display: flex;
+    justify-content: flex-end;
+    gap: 15px;
+    margin-top: 25px;
+}
+
+#btnAgregarPregunta,
+#btnGuardarCuestionario {
+    color: #ffffff;
+    border: none;
+    padding: 12px 20px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: 0.25s;
+}
+
+#btnAgregarPregunta {
+    background: #00bfff;
+}
+
+#btnGuardarCuestionario {
+    background: #6a11cb;
+}
+
+#btnAgregarPregunta:hover,
+#btnGuardarCuestionario:hover {
+    opacity: 0.95;
+    transform: translateY(-2px);
+}
+
+/* ==========================
+   RESPONSIVE
+========================== */
+
+@media (max-width: 768px) {
+
+    .card-cuestionario {
+        padding: 20px;
+    }
+
+    .acciones {
+        flex-direction: column;
+    }
+
+    #btnAgregarPregunta,
+    #btnGuardarCuestionario {
+        width: 100%;
+    }
+
+}

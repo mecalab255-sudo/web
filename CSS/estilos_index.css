@@ -1,0 +1,176 @@
+/**
+ * ==========================================================
+ * PROYECTO : FORMA TALENTO
+ * VERSIÓN  : 1.1
+ * ARCHIVO  : CSS/estilos_index.css
+ * ----------------------------------------------------------
+ * Descripción:
+ * Estilos para la pantalla de inicio de sesión del sistema.
+ * Define el fondo visual, contenedor de login, campos,
+ * botones y comportamiento responsivo.
+ * ==========================================================
+ */
+
+/* ==========================
+   RESET GENERAL
+========================== */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* ==========================
+   FONDO PRINCIPAL
+========================== */
+
+body {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    font-family: Arial, Helvetica, sans-serif;
+
+    background-image: url("../IMG/DNC_LOGO_OPACO.jpeg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+
+    position: relative;
+    padding: 20px;
+}
+
+/* Oscurece ligeramente la imagen */
+
+body::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.35);
+}
+
+/* ==========================
+   CONTENEDOR LOGIN
+========================== */
+
+.login-container {
+    position: relative;
+    z-index: 1;
+
+    width: 430px;
+    max-width: 100%;
+
+    padding: 40px;
+    border-radius: 20px;
+
+    background: rgba(255, 255, 255, 0.18);
+
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+
+    border: 1px solid rgba(255, 255, 255, 0.25);
+
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.35);
+}
+
+/* ==========================
+   TÍTULOS
+========================== */
+
+h1 {
+    text-align: center;
+    color: #ffffff;
+    font-size: 34px;
+    margin-bottom: 5px;
+}
+
+h2 {
+    text-align: center;
+    color: #eeeeee;
+    font-weight: normal;
+    margin-bottom: 35px;
+}
+
+/* ==========================
+   FORMULARIO
+========================== */
+
+input {
+    width: 100%;
+    padding: 15px;
+    margin: 12px 0;
+
+    border: none;
+    border-radius: 10px;
+    outline: none;
+
+    font-size: 16px;
+
+    background: rgba(255, 255, 255, 0.9);
+}
+
+input::placeholder {
+    color: #555555;
+}
+
+input:focus {
+    box-shadow: 0 0 0 3px rgba(0, 191, 255, 0.35);
+}
+
+/* ==========================
+   BOTÓN
+========================== */
+
+button {
+    width: 100%;
+    padding: 15px;
+    margin-top: 20px;
+
+    border: none;
+    border-radius: 10px;
+
+    background: #4f46e5;
+    color: #ffffff;
+
+    font-size: 17px;
+    cursor: pointer;
+    transition: 0.3s;
+    font-weight: bold;
+}
+
+button:hover {
+    background: #22c55e;
+    transform: translateY(-2px);
+}
+
+button:active {
+    transform: translateY(0);
+}
+
+/* ==========================
+   RESPONSIVE
+========================== */
+
+@media (max-width: 480px) {
+
+    .login-container {
+        padding: 30px 24px;
+    }
+
+    h1 {
+        font-size: 28px;
+    }
+
+    h2 {
+        font-size: 20px;
+        margin-bottom: 28px;
+    }
+
+    input,
+    button {
+        font-size: 15px;
+    }
+
+}

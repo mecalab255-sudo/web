@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>FORMA TALENTO | Cuestionarios</title>
+
+    <link rel="stylesheet"
+          href="../CSS/estilos_dashboard.css">
+
+    <link rel="stylesheet"
+          href="../CSS/estilos_cuestionario.css">
+
+</head>
+
+<body>
+
+    <div class="dashboard">
+
+        <!-- ========================================== -->
+        <!-- MENÚ LATERAL                               -->
+        <!-- ========================================== -->
+
+        <aside class="sidebar">
+
+            <div class="logo">
+                FORMA TALENTO
+            </div>
+
+            <ul class="menu">
+
+                <li>
+
+                    <a href="dashboard.html">
+                        Dashboard
+                    </a>
+
+                </li>
+
+                <li id="menu-usuarios" data-rol-admin>
+
+                    <a href="usuarios.html">
+                        Usuarios
+                    </a>
+
+                </li>
+
+                <li class="active">
+
+                    <a href="cuestionarios.html">
+                        Cuestionarios
+                    </a>
+
+                </li>
+
+                <li id="menu-resultados" data-rol-admin-supervisor>
+
+                    <a href="resultados.html">
+                        Resultados
+                    </a>
+
+                </li>
+
+                <li>
+
+                    <a href="#"
+                       onclick="Auth.cerrarSesion(); return false;">
+                        Cerrar Sesión
+                    </a>
+
+                </li>
+
+            </ul>
+
+        </aside>
+
+        <!-- ========================================== -->
+        <!-- CONTENIDO PRINCIPAL                        -->
+        <!-- ========================================== -->
+
+        <div class="main-content">
+
+            <header class="topbar">
+
+                <h2>
+                    Cuestionarios
+                </h2>
+
+                <div class="usuario"
+                     id="usuarioInfo">
+                </div>
+
+            </header>
+
+            <main class="contenido">
+
+                <h1>
+                    Cuestionarios Disponibles
+                </h1>
+
+                <div class="barra-acciones">
+
+                    <button id="btnNuevoCuestionario"
+                            type="button"
+                            data-rol-admin>
+                        + Crear Cuestionario
+                    </button>
+
+                </div>
+
+                <div id="listaCuestionarios"
+                     class="contenedor-cuestionarios">
+                </div>
+
+            </main>
+
+        </div>
+
+    </div>
+
+    <!-- ===================================================== -->
+    <!-- CONFIGURACIÓN                                         -->
+    <!-- ===================================================== -->
+
+    <script src="../JS/config/storageKeys.js"></script>
+
+    <script src="../JS/config/appConfig.js"></script>
+
+    <!-- ===================================================== -->
+    <!-- UTILIDADES                                            -->
+    <!-- ===================================================== -->
+
+    <script src="../JS/utils/storage.js"></script>
+
+    <script src="../JS/utils/helpers.js"></script>
+
+    <script src="../JS/utils/idGenerator.js"></script>
+
+    <!-- ===================================================== -->
+    <!-- DATOS / CATÁLOGOS V1.1                                -->
+    <!-- ===================================================== -->
+
+    <script src="../JS/data/rolesData.js"></script>
+
+    <script src="../JS/data/areasData.js"></script>
+
+    <script src="../JS/data/puestosData.js"></script>
+
+    <script src="../JS/data/competenciasData.js"></script>
+
+    <script src="../JS/data/categoriasData.js"></script>
+
+    <script src="../JS/data/prioridadesData.js"></script>
+
+    <script src="../JS/data/cursosData.js"></script>
+
+    <script src="../JS/data/usuariosData.js"></script>
+
+    <script src="../JS/data/cuestionariosData.js"></script>
+
+    <script src="../JS/data/preguntasData.js"></script>
+
+    <script src="../JS/data/asignacionesData.js"></script>
+
+    <script src="../JS/data/resultadosData.js"></script>
+
+    <script src="../JS/data/respuestasData.js"></script>
+
+    <!-- ===================================================== -->
+    <!-- SERVICIOS                                             -->
+    <!-- ===================================================== -->
+
+    <script src="../JS/services/BootstrapService.js"></script>
+
+    <script src="../JS/services/UsuariosService.js"></script>
+
+    <script src="../JS/services/CuestionariosService.js"></script>
+
+    <script src="../JS/services/AsignacionesService.js"></script>
+
+    <script src="../JS/services/resultadosService.js"></script>
+
+    <!-- ===================================================== -->
+    <!-- AUTENTICACIÓN Y PERMISOS                              -->
+    <!-- ===================================================== -->
+
+    <script src="../JS/auth/auth.js"></script>
+
+    <script src="../JS/auth/permisos.js"></script>
+
+    <!-- ===================================================== -->
+    <!-- PÁGINA                                                -->
+    <!-- ===================================================== -->
+
+    <script src="../JS/pages/cuestionarios.js"></script>
+
+</body>
+
+</html>
